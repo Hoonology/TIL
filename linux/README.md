@@ -61,28 +61,32 @@
 
 </br>
 
-| [Unix](https://w3techs.com/technologies/details/os-unix) | 80.7% |
+## **웹사이트에서 리눅스를 사용하는 비율**
+
+| 종류 | 비율 |
 | --- | --- |
+| [Unix](https://w3techs.com/technologies/details/os-unix) | 80.7% |
 | [Linux](https://w3techs.com/technologies/details/os-linux) | 38.8% |
-|  | W3Techs.com, 8 March 2023 |
-| 웹사이트에서 리눅스를 사용하는 비율 |  |
+
+(W3Techs.com, 8 March 2023)
+
+
 
 </br>
 
-## **Subcategories of Linux**
+## **Linux의 다양한 하위 범주를 사용하는 웹 사이트의 백분율**
 
-This diagram shows the percentages of websites using various subcategories of Linux.
 
-How to read the diagram:Ubuntu is used by 31.9% of all the websites who use Linux
 
-| [Ubuntu](https://w3techs.com/technologies/details/os-ubuntu) | 31.9% |
+| 종류 | 비율 |
 | --- | --- |
+| [Ubuntu](https://w3techs.com/technologies/details/os-ubuntu) | 31.9% |
 | [Debian](https://w3techs.com/technologies/details/os-debian) | 16.8% |
 | [CentOS](https://w3techs.com/technologies/details/os-centos) | 8.4% |
 | [Red Hat](https://w3techs.com/technologies/details/os-redhat) | 0.7% |
 | Unknown | 41.2% |
-|  | W3Techs.com, 8 March 2023 |
-| Linux의 다양한 하위 범주를 사용하는 웹 사이트의 백분율 |  |
+
+(W3Techs.com, 8 March 2023)
 
 </br>
 
