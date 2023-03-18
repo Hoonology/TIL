@@ -2,7 +2,7 @@
 
 # INDEX
 
-[1. 리눅스인 이유](/linux/1%20%EB%A6%AC%EB%88%85%EC%8A%A4%EC%9D%B8%20%EC%9D%B4%EC%9C%A0%20122cfc1649dd435ca659e90a11b8630e.md)
+[1. 리눅스인 이유](/linux/1_리눅스인_이유.md)
 
 [2. CLI 기본 명령어](/linux/2_CLI%20_%EA%B8%B0%EB%B3%B8_%EB%AA%85%EB%A0%B9%EC%96%B4.md)
 
