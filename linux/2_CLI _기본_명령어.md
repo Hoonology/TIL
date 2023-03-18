@@ -81,7 +81,7 @@
     vim sample.txt
     ```
     
-    ![스크린샷 2023-03-09 16.33.20.png](/linux/asset/2_CLI_%EA%B8%B0%EB%B3%B8%EB%AA%85%EB%A0%B9%EC%96%B4/helloWorld.png)
+    ![스크린샷 2023-03-09 16.33.20.png](/linux/asset/2_CLI_기본명령어/helloworld.png)
     
     [ esc ] - :wq! : 저장 후 나가기
     
