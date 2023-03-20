@@ -9,6 +9,9 @@
         - [Clone](#clone) 
         - [Pull](#pull) 
 - [Git Command](#git-command)
+- [Git 혼자 작업하기](#git-혼자-작업하기)
+  - [순서(git init-add-commit-push)](#순서)
+
 ---
 
 </br>
@@ -96,4 +99,49 @@ Local Repository에서 변경된 사항을 Remote Repository 에 업로드하기
 
 
 </br>
+
+---
+</br>
+</br>
+</br>
+
+# Git 혼자 작업하기
+- 나만의 오픈소스 프로젝트 제작의 절차
+- Git으로 관리하며 누구나 contribute 하는 방법
+
+## 순서
+
+![overview](/Git/asset/2_Git/workflow_overview.png)
+
+1. 오픈 소스 코드를 저장할 디렉토리 생성  
+```local Git repository``` 생성 
+    ``` bash
+    git init
+    ```
+
+2. 코드 작성 후 저장
+    ```bash
+    git add
+    ```
+3. ```staging area```의 파일 ```commit``` 
+    ```bash
+    git commit -m "message"
+    ```
+4. ```local repository```에 기록한 내역을 ```push```
+    ```bash
+    git push
+    ```
+</br>
+
+### restore
+```commit``` 되지 않은 ```Local Repository```의 변경사항 폐기
+```bash
+git restore <파일명>
+```
+
+### git add
+
+![git_add](/Git/asset/2_Git/git_add.png)
+
+```Unstaged files```를 ```Staging area```로 추가 !
 
