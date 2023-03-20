@@ -37,4 +37,4 @@ git config --global core.editor nano
 
 ***ssh***는 ***Secure shell***의 줄임말(Secure SHell)로, 보안이 강화된 shell 접속을 뜻합니다. CLI 환경(터미널)에서 다른 PC에 접속하거나 요청할 때 사용하며, 비대칭키를 이용해 사용자를 인증합니다. 요청이나 비대칭키에 대해서는 추후 제공되는 콘텐츠에서 상세히 다룹니다. 이 콘텐츠에서는 github에 ssh 공개키(비대칭키 중 하나)를 등록하는 방법과 ssh를 이용해 git clone하는 방법을 안내합니다.
 
-
+sadasda
