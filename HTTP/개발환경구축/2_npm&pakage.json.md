@@ -1,4 +1,12 @@
 # npm & package.json
+# INDEX
+
+- [node 로 js 파일 실행하기](#node로-js-파일-실행하기)
+- [npm 모듈과 pakage.json](#npm-모듈과-pakagejson)
+- [npm](#npm)
+- [package.json](#packagejson)
+---
+</br>
 
 ## node로 js 파일 실행하기
 ``` bash

@@ -1,7 +1,16 @@
 # nvm & node.js
 
-node.js에서 JavaScript를 실행시키기 위해서는, 당연히 node.js를 설치해야 합니다. 별도의 프로그램으로 설치할 수도 있지만, 패키지 매니저처럼 node.js의 버전을 관리할 수 있도록 nvm(Node Version Manager)으로 node.js를 설치합니다. nvm을 사용하면 node.js의 다양한 버전을 쉽게 설치하고, 사용할 수 있습니다.
+node.js에서 JavaScript를 실행시키기 위해서는, 당연히 node.js를 설치해야 합니다. 별도의 프로그램으로 설치할 수도 있지만, 패키지 매니저처럼 node.js의 버전을 관리할 수 있도록 ```nvm```(Node Version Manager)으로 ```node.js```를 설치합니다. ****nvm을 사용하면 node.js의 다양한 버전을 쉽게 설치하고, 사용할 수 있습니다.****
 
+</br>
+
+# INDEX
+
+- [nvm 설치](#1-nvm-설치)
+- [설치 확인](#2-설치-확인)
+- [node.js 설치](#3-nodejs-설치)
+- [node 버전 변경](#4-node-버전-변경)
+---
 </br>
 
 ## 1. nvm 설치
