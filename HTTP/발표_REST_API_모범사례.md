@@ -68,3 +68,17 @@ RESTful API 설계 및 구현을 위한 몇 가지 모범 사례입니다.
 ![pic](/HTTP/assets/발표/Postman.png)
 
 그 다음 진행은 .. https://developer-talk.tistory.com/421/comments 를 GET을 통해 Send 해본 뒤,   -->
+
+
+발표자 답안 1)
+![...](/HTTP/assets/발표/학생답안.png)
+
+
+교수님 답안 )  
+![pic](/HTTP/assets/발표/교수님1.png)
+
+![pic](/HTTP/assets/발표/교수님2.png)
+
+<br>
+
+![pic](/HTTP/assets/발표/교수님3.png)
