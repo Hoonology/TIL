@@ -179,3 +179,55 @@ API 문서를 **가독성** 있게 만드는 것이 굉장히 중요하다.
 
 [Swagger Editor](https://swagger.io/tools/swagger-editor/)
 
+## OpenAPI 명세 빠르게 알아보기
+> YAML 파일 작성 요령  
+    - 데이터는 key: value 의 형태  
+    - key: 와 value 사이에는 반드시 공백 필요  
+    - 계층 구조를 표현하기 위해서 2칸 혹은 4칸의 들여쓰기를 사용해야 함 (탭 문자열은 허용되지 않음)
+
+“블로그 글 전체 조회”를 예로 들면 다음과 같습니다.
+
+요청이 GET /article 이며, 이에 대한 응답이 성공적으로 도달한 경우 (200) 다음과 같은 JSON을 받게 된다고 가정해봅시다.
+
+``` json
+{
+  "article": [
+    {
+      "title": "3월 15일의 TIL",
+      "body": "오늘은 REST API를 배웠다",
+      "id": 2
+    },
+    {
+      "title": "3월 16일의 TIL",
+      "body": "REST API를 복습했다",
+      "id": 3
+    }
+  ]
+}
+```
+이 경우에 URL Path 디자인을 다음과 같이 할 수 있습니다. 데이터 모델에 Article이 이미 정의되어 있다고 가정한 코드입니다.
+
+```http
+paths:
+  /article:
+    get:
+      description: '블로그 글 전체 조회'
+      responses:
+        '200':
+          description: '성공 응답'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  article:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Article'
+
+```
+
+![pic](/HTTP/assets/RESTAPI문서작성/paths.png)
+
+
+
