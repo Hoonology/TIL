@@ -66,8 +66,8 @@ nginx.conf 파일 위치 파악 명령어
     <br>
     <br>
 
+아래 코드로 우선 nginx 디렉토리로 이동한 뒤,  nginx.conf.default 파일을 열어보자 ( 사실 nginx.conf 만 열어도 된다. )
 
-근데, 여기서 발견한 해결법 ...  
  ```bash
  cd /opt/homebrew/etc/nginx
  ```
@@ -75,8 +75,13 @@ nginx.conf 파일 위치 파악 명령어
 cat nginx.conf.default
 ```
 
-![pic4](/WAS와_WebServer/assets/3_nginx_Web_Server와_웹호스팅/오류해결.png)
+![pic4](/WAS와_WebServer/assets/3_nginx_Web_Server와_웹호스팅/오류해결.png)  
+<p align = "center">[실행창]</p align = "center">
 
+<br>
+<br>
+
+****블록 설명****
 - worker_processes number | auto;
     nginx 프로세스 실행 가능 수를 정의하는 지시어입니다. 최적의 값으로는 CPU의 코어 수, 데이터를 저장하는 하드 디스크 수, 로드 패턴을 비롯한 여러 요인에 따라 달라집니다. 보통은 CPU 코어 수 만큼을 할당하는 것이 보통이며, auto로 설정해두면 자동으로 값을 알맞게 설정해 줍니다.
     include file | mask;
@@ -111,26 +116,31 @@ cat nginx.conf.default
 
    ```localhost:8080``` 입력
     ![img_url](https://velog.velcdn.com/images%2Fdavelee%2Fpost%2F68269eda-34c3-4325-b1c5-e7312e07e45b%2Fimage.png)
-Server 블록 Checking,
+먼저, Server 블록 Checking  
+
 ![pic5](/WAS와_WebServer/assets/3_nginx_Web_Server와_웹호스팅/localhost.png)
 
+아래 코드를 실행하여 Server 블록을 8080에서 80으로 편집해본다.
 ```bash
 nano nginx.conf
 ```
-![pic6](/WAS와_WebServer/assets/3_nginx_Web_Server와_웹호스팅/listen80.png)
+![pic6](/WAS와_WebServer/assets/3_nginx_Web_Server와_웹호스팅/listen80.png)  
+<p align = "center"> [ nano nginx.conf를 실행하고 listen 값을 80으로 수정 ] </p align = "center">  
 
-server의 ```listen 8080``` 을 ```80```으로 수정 
 
-하 ... 여전히 안된다 ...
 
-localhost 들어가도 사이트에 연결할 수 없다고 나온다.
+<br>
 
+***하 ... 여전히 안된다 ...***   
+***도메인에 localhost 입력 시, 사이트에 연결할 수 없다고 나온다.***  
+***도대체 문제가 무엇일까,***
+***다시 과제 페이지를 확인하여 진행해본다.***
 <br>
 <br>
 <br>
 
 
-다시 과제 진행해보자 ..
+
 
 ---
 
@@ -161,16 +171,28 @@ html을 작성한 후에는 해당 파일이 있는 위치(경로)를 파악
 
 ## 오류 발생 
 localhost:10024로 접근 시 , 사이트에 연결할 수 없음이 뜬다.
+
+아래 코드를 실행한 뒤 결과를 본다.
 ```bash
 sudo nginx -t # 상태 확인
 sudo nginx # 오류가 없으면 이 명령을 실행 
 ```
 
+결과)
+
 ## 이번엔 404 Not Found 오류 발생
-진전이 있다.   
-진전이 있다.   
-진전이 있다.   
-...........................
+
+그래... 예전에 블로그 만들 때에도 404 에러가 떴고, 해결할 수 있는 여지가 만들어졌었지!
+
+
+
+<p align = "center">(자기최면)  </p align = "center">
+<p align = "center">진전이 있다.</p align = "center">
+<p align = "center">진전이 있다.</p align = "center">
+<p align = "center">진전이 있다.</p align = "center">
+<p align = "center">...........................</p align = "center">
+
+
 
 <br>
 
@@ -179,7 +201,6 @@ sudo nginx # 오류가 없으면 이 명령을 실행
 <br>
 
 ![finally](/WAS와_WebServer/assets/3_nginx_Web_Server와_웹호스팅/드디어.png)
-![finally](/WAS와_WebServer/assets/3_nginx_Web_Server와_웹호스팅/드디어2.png)
 
 ![img_url](https://blog.kakaocdn.net/dn/evmN8l/btq69RB0y7d/GZAFKhr8iVK7ZRfsjC89xk/img.jpg)
 
@@ -211,6 +232,11 @@ sudo nginx -s reload
 끝.
 
 
+![finally](/WAS와_WebServer/assets/3_nginx_Web_Server와_웹호스팅/드디어2.png)
+
+<p align = "center"> *** 고마워 GPT... 너 밖에 없어.. Bing으로 안 갈아탈게 .. 정말로 진짜야 *** </p align = "center">
+
+<br>
 
 
 ![img_url](https://blog.kakaocdn.net/dn/evmN8l/btq69RB0y7d/GZAFKhr8iVK7ZRfsjC89xk/img.jpg)
