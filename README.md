@@ -7,7 +7,7 @@
     -    [규모에 따른 운영](https://github.com/Hoonology/TIL/blob/main/whatIsTheDevOps/규모에_따른_운영.md)   
    </br>
 
-- 리눅스 운영체제
+- [리눅스 운영체제](/Linux/README.md)
     - [리눅스인 이유](/linux/1_%EB%A6%AC%EB%88%85%EC%8A%A4%EC%9D%B8_%EC%9D%B4%EC%9C%A0.md)
     - [CLI 기본 명령어](/linux/2_CLI%20_%EA%B8%B0%EB%B3%B8_%EB%AA%85%EB%A0%B9%EC%96%B4.md)
     - [패키지와 패키지 매니저](/linux/3_%ED%8C%A8%ED%82%A4%EC%A7%80%EC%99%80_%ED%8C%A8%ED%82%A4%EC%A7%80%EB%A7%A4%EB%8B%88%EC%A0%80.md)  
@@ -22,10 +22,12 @@
 
 </br>
 
-- 웹서비스 개발 기초  
-    - [클라이언트 - 서버 아키텍처]()
-    - [웹 서비스 접근하기]()  
-    =======[발표]()========
-    - [HTTP 기초]()  
-    =======[발표]()========
-    - [HTTP 요청 실습]()
+- [웹 서비스 개발 기초](/WebDev_basic/)
+    - [클라이언트 - 서버 아키텍처](/WebDev_basic/1_%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8%20_%EC%84%9C%EB%B2%84_%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98.md)
+    - [웹 서비스 접근하기](/WebDev_basic/2_%EC%9B%B9_%EC%84%9C%EB%B9%84%EC%8A%A4_%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B0.md)
+       
+       =======[발표](/WebDev_basic/1st_%EB%B0%9C%ED%91%9C.md)========  
+    - [HTTP 기초](/WebDev_basic/3_HTTP_%EA%B8%B0%EC%B4%88.md)
+
+         =======[발표](/WebDev_basic/2nd_%EB%B0%9C%ED%91%9C.md)========
+    - [HTTP 요청 실습](/WebDev_basic/HTTP_%EC%9A%94%EC%B2%AD_%EC%8B%A4%EC%8A%B5.md)
