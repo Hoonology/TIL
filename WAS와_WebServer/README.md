@@ -1,10 +1,10 @@
 # WAS와 Web Server
 # INDEX
 - [서버](/WAS와_WebServer/1_서버.md)
-- [정적 웹사이트와 동적 웹사이트]()
-- [nginx Web Server와 웹 호스팅]()
-- [CORS]()
-- [웹 애플리케이션 서버(WAS) 개발]()
+- [정적 웹사이트와 동적 웹사이트](/WAS와_WebServer/2_%EC%A0%95%EC%A0%81_%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8%EC%99%80_%EB%8F%99%EC%A0%81_%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8%20copy%202.md)
+- [nginx Web Server와 웹 호스팅](/WAS와_WebServer/3_nginx_Web_Server%EC%99%80_%EC%9B%B9_%ED%98%B8%EC%8A%A4%ED%8C%85.md)
+- [CORS](/WAS와_WebServer/4_CORS.md)
+- [웹 애플리케이션 서버(WAS) 개발](/WAS와_WebServer/5_%EC%9B%B9_%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98_%EC%84%9C%EB%B2%84(WAS)_%EA%B0%9C%EB%B0%9C.md)
 
 ---
 <br>
