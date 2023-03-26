@@ -11,6 +11,7 @@
     - [404 에러 발생](#이번엔-404-not-found-오류-발생)
     - [해결 방법](#해결-방법)
 
+- [CozStory 클라이언트 호스팅]()
 ---
 
 <br>
@@ -244,3 +245,78 @@ sudo nginx -s reload
 
 
 # 결론) GPT 최고
+
+
+<br>
+<br>
+
+
+# CozStory 클라이언트 호스팅
+
+CozStory 프론트엔드 빌드 및 nginx를 이용해 정접 웹사이트로 호스팅
+
+## CozStory
+간단한 블로그 애플리케이션  
+[ CRUD ] 지원
+
+- Create 
+- Read
+- Update
+- Delete
+
+![pic](/WAS와_WebServer/assets/3_nginx_Web_Server와_웹호스팅/coz.png)  
+- nginx 웹 서버를 통해 클라이언트 제공_React 기술로 작성   
+<u>( 프론트엔드 역할 )</u>
+- node.js 기반의 fastify 프레임워크로 작성된 WAS가 리소스 제공하고 비즈니스 로직 (CRUD 등)을 수행한다.  
+<u>( 백엔드 역할 ) </u>
+
+<br>
+
+## CozStory 클라이언트 호스팅
+### 1. 소스 코드 빌드
+- 주어진 [레포지토리](https://github.com/Hoonology/sprint-cozstory-frontend)의 코드 빌드
+
+
+
+```bash
+cd /opt/homebrew/etc/nginx
+```
+```bash
+git clone <레포 주소>
+cd /opt/homebrew/etc/nginx/<레포주소>
+```
+```bash
+npm install
+```
+```bash
+npm start
+```
+http://localhost:3000 접속  
+사이트에 연결할 수 없음 _ 오류 발생  
+
+<br>
+
+프로덕션용 앱을 build 폴더에 빌드한다.( 리액트 환경 빌드 최적화 ) 
+```bash
+npm run build
+```
+- 빌드가 축소되고, 앱을 배포할 준비가 됐다.
+
+index.html 생성 완료
+![build](/WAS와_WebServer/assets/3_nginx_Web_Server와_웹호스팅/build.png)
+
+### 2. 빌드한 정적 파일 호스팅하기
+- nginx.conf 파일 작성
+    - port 번호 : 10024
+    - Server 블록과 Location 블록 작성
+```bash
+nano nginx.conf
+```
+
+![conf](/WAS와_WebServer/assets/3_nginx_Web_Server와_웹호스팅/conf수정.png)
+
+- http://localhost:10024 으로 접속  
+
+![mystatus](/WAS와_WebServer/assets/3_nginx_Web_Server와_웹호스팅/myStatus.png)
+
+난 하얀 창만 뜬다... 과제 안내에서는 '서버랑 연결되지 않은 것 같아요.' 라고 나와야한다는데.. 잘 나온거겠지 ?
