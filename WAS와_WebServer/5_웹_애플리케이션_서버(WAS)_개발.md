@@ -19,12 +19,17 @@
             - [require 모듈로더, express() 함수, port](#require-모듈로더-express-함수-port)
             - [get 메소드, '/', req, res, res.send()](#get메소드--req-res-ressend)
             - [app.listen 메소드](#applisten-메소드)
-    - [Mini Node Server 만들기](#3-mini-node-server-만들기)
-        - [Getting Started](#getting-startedmininodeserver)
-        - [Mini Node Server API]()
-        - [Mini Node Server 요구사항]()
-        - [Mini Node Server 서버 작성 ]()
-
+    - [3. Mini Node Server 만들기](#3-mini-node-server-만들기)
+        - [Getting Started Mini - Node Server](#getting-startedmininodeserver)
+          - [Mini Node Server API](#mini-node-server-api)
+          - [Mini Node Server 서버작성](#mini-node-server-서버-작성)
+          - [CORS 적용](#cors-적용)
+          - [문자열을 대문자로 만들어 응답하기](#문자열을-대문자로-만들어-응답하기)
+          - [확인하기](#확인하기)
+            - [Client](#client)
+            - [Server](#server)
+          - [문제 발생](#문제-발생)
+          - [문제 해결](#문제-해결)
 ---
 
 <br>
