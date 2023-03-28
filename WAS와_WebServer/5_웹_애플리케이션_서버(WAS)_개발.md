@@ -83,6 +83,9 @@ app.listen(port, () => {
 앱은 루트 URL(/) 또는 라우트에 대한 요청에 “Hello World!”로 응답합니다.  
 다른 모든 경로에 대해서는 404 Not Found로 응답한다.
 
+- 터미널에 ```node app.js``` 를 입력하면 Example app listening on port 3001 이라고 나온다. ( 위에 포트 3000으로 했는데, 에러 떠서 왜 그런가 보니깐 다른 곳(nginx 등에서 3000번 포트로 지정해논게 있어서 충돌 뜬듯.. 그래서 3001로 바꾼 다음, 실행하니 저렇게 나왔다.)) -> localhost:3001 들어가면 Hello World! 뜬다.
+ 
+
 ### 앱 실행
 ```bash
 node app.js
@@ -130,6 +133,9 @@ const express = require('express')
 
 app 객체의 listen 메소드 사용
 - 기본형태 : ```app.listen(port, callback)```
+- 터미널에 ```Node app.js``` 를 입력하면 Example app listening on port 3001 이라고 나온다. ( 위에 포트 3000으로 했는데, 에러 떠서 왜 그런가 보니깐 다른 곳(nginx 등에서 3000번 포트로 지정해논게 있어서 충돌 뜬듯.. 그래서 3001로 바꾼 다음, 실행하니 저렇게 나왔다.)) -> localhost:3001 들어가면 Hello World! 뜬다.
+
+
 
 <br>
 <br>
@@ -194,19 +200,77 @@ app.post('/upper', (req, res) => {
 
 ### 확인하기
 #### Client
-``` bash
+```bash
 npx serve ./client -l 3000
+```
+#### Server
+``` bash
+node server/server-express.js
 # 또는
 npm start
 ```
 
+---
+
 ### 문제 발생
-시키는대로 했는데, localhost:4000 들어가면 사이트에 연결할 수 없다고 나온다.
+1. [Client]  
+  ```npx serve ./client -l 3000``` 명령을 사용하면 터미널에 주소가 2가지가 나오고 그 중 하나를 선택하여 브라우저를 열면 localhost:3000에서  
+   toUpperCase랑 toLowerCase 요청 및 응답하는 페이지가 나와야하데 안 나온다.  
 
-### 문제 해결
+    [문제 해결]
+    ```json
+    app.use(cors());
+    app.use(express.json({"strict":false}));
 
-내가 바보다.  
-```/sprint-mini-node-server/server``` 디렉토리에 들어가서  
- ```npm start``` 했으니 당연히 안되지 .. 상위 디렉토리인 ```/sprint-mini-node-server/``` 에 가서 (package.js 파일이 있는 디렉토리) npm start 하니깐 localhost:4000 에서 구동된다고 나온다.  
- ![pic](/WAS와_WebServer/assets/5_웹_애플리케이션_서버(WAS)_개발/localhost4000.png)
+    app.get('/', (req, res) => {
+      res.send("Hello World!")
+    })
+
+    // TODO: 아래에 '/upper'로 들어오는 요청을 처리하는 코드를 작성하세요.
+
+    app.post('/upper', (req, res) => {
+      let data = req.body.toUpperCase();
+      res.json(data);
+    })
+
+
+    // TODO: 아래에 '/lower'로 들어오는 요청을 처리하는 코드를 작성하세요.
+
+    app.post('/lower', (req, res) => {
+            let data = req.body.toLowerCase();
+            res.json(data);
+
+
+
+    app.listen(port, () => {
+      console.log(`Server listening on http://${ip}:${port}`)
+    })
+    ```
+
+    해결은 아니고... 또 다른 문제..   
+    req 에 따른 res가 안 나온다 ...
+
+
+
+  
+2. [Server]   
+```node server/server-express.js``` 혹은 ```npm start``` 명령을 사용하고,  
+localhost:4000 들어가면 Hello World! 라고 떠야하는데, 사이트에 연결할 수 없다고 나온다.   
+
+ ### 문제 해결
+  내가 바보다.  
+    명령어 ```npx serve ./client -l 3000``` 와 ```npm start```  를  
+    ```/sprint-mini-node-server/server```  혹은 ```/sprint-mini-node-server/client``` 디렉토리에 들어가서 입력하면 안되고,  
+    상위 디렉토리인 ```/sprint-mini-node-server/``` 에 가서 (package.js 파일이 있는 디렉토리)  
+    ```npx serve ./client -l 3000``` 와 ```npm start``` 를 입력하니깐   
+    localhost:3000 과 localhost:4000 에서 구동된다고 나온다.  
+    ![pic](/WAS와_WebServer/assets/5_웹_애플리케이션_서버(WAS)_개발/localhost4000.png)
+    [클라이언트] 요청, 응답 창이 뜬다 !
+    ![4000](/WAS와_WebServer/assets/5_웹_애플리케이션_서버(WAS)_개발/3000s.png)  
+    [서버] Hello World! 가 뜬다 !  
+    ![4000](/WAS와_WebServer/assets/5_웹_애플리케이션_서버(WAS)_개발/4000.png)  
+
+---
+
+
 
