@@ -304,3 +304,4 @@ PASSWORD=4uSs-7B21LIZfI17Fzf1acdcJCG87ke
 DATABASE=jvhigyac
 ```
 를 shoping-bag 폴더에 넣고 Push 해주자
+
