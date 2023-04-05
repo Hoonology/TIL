@@ -6,6 +6,10 @@
 - [WAS와 데이터베이스 연결](#was와-데이터베이스-연결)
 - [CRUD 구현](#crud-구현)
   - [엔드포인트 구분](#엔드포인트-구분)
+    - [쿼리문(테이블)](#쿼리문)
+      - [/items ( 상품 목록 )](#items--상품-목록)
+      - [/cart  (장바구니)](#cart--장바구니)
+- [회고](#회고)
 ---
 ### 쇼핑몰 요구사항
 - [✔] [사용자는 모든 상품을 조회할 수 있다]
@@ -83,6 +87,7 @@ connectionString: `postgres://${DATABASE_USER}:${DATABASE_PASSWORD}@${DATABASE_H
 우리가 직접 구현할 엔드포인트는 3가지로,  ```users```, ```items```, ```cart```가 있다.  
 선행으로 ElephantSQL에 아래 쿼리문들을 작성하여 DB 작업을 진행한다.
 
+#### 쿼리문
   - 테이블 생성 ***CREATE***
        ``` sql
     DROP TABLE IF EXISTS public.users;
@@ -136,7 +141,7 @@ connectionString: `postgres://${DATABASE_USER}:${DATABASE_PASSWORD}@${DATABASE_H
         VALUES (2,300,'Clothing','Nike','SwooshT-shirt');
       ```
   
-#### /items : 상품 목록   
+#### * /items : 상품 목록   
 - GET
 
 ![items](./assets/get_items.png)
@@ -160,7 +165,7 @@ connectionString: `postgres://${DATABASE_USER}:${DATABASE_PASSWORD}@${DATABASE_H
    ``` 
 
 > fastify를 통해 GET 을 구현하기 위해 위와 같은 코딩을 하고,   
-html 및 css 작업을 통해 (생략)  
+html 및 css 작업을 통해 (생략)  [HTML 및 CSS가 포함된 js 파일 ](./routes/items/GET_items.js)
 localhost:3000/items에 접근 시 프론트로 작업된 화면이 보여지게 했다.
 
 - POST (Authorization)
@@ -230,9 +235,90 @@ check_seller - tokenValidator에 boolean 값을 넣고, 판매자의 토큰 값�
 <br>
 
 #### /cart : 장바구니   
+- GET: http://localhost:3000/cart?user_id=${user_id} 방식으로 조회한다. ***엔드포인트에 쿼리문을 사용하여 구현하였다.***
+
+```js 
+module.exports = async function(fastify, ops) {
+fastify.get('/cart', async function(request, reply) {
+  const client = await fastify.pg.connect(); 
+  const userId = request.query.user_id;
+  const query = `SELECT * FROM public.cart WHERE user_id = '${userId}'`;
+  const result = await client.query(query);
+  return await reply.code(200).send(result.rows);
+})    
+}
+```
+
+- POST
+
+```js
+module.exports = async function(fastify, ops) {
+    fastify.post('/cart', async function(request, reply) {
+        const client = await fastify.pg.connect(); 
+        const userId = request.body.user_id;
+        const query = `SELECT * FROM public.cart WHERE user_id = '${userId}'`;
+
+               const { rows } = await client.query(
+            `INSERT INTO cart (cart_id, user_id, item_id, item_cnt)
+            VALUES ('${request.body.cart_id}', '${request.body.user_id}', '${request.body.item_id}','${request.body.item_cnt}')`
+            )
+                
+        const result = await client.query(query);
+        return await reply.code(201).send(result.rows);
+    })     
+  } 
+```
+- PUT
+``` js
+module.exports = async function(fastify, ops) {
+    fastify.put('/cart', async function(request, reply) {
+        const client = await fastify.pg.connect(); 
+        const userId = request.body.user_id;
+        const query = `SELECT * FROM public.cart WHERE user_id = '${userId}'`;
+
+        const item_id = request.body.item_id;
+        const item_cnt = request.body.item_cnt;
+        const cart_id = request.body.cart_id;
+
+        
+
+            const { rows } = await client.query(
+                `UPDATE public.cart SET item_cnt=${item_cnt} WHERE cart_id='${cart_id}' and item_id=${item_id}`
+            )
+
+                
+        const result = await client.query(query);
+
+        return await reply.code(201).send(result.rows);
+    })     
+  } 
+  ```
+-  DELETE
+  ```js
+  module.exports = async function(fastify, ops) {
+    fastify.delete('/cart', async function(request, reply) {
+        const client = await fastify.pg.connect(); 
+        const userId = request.body.user_id;
+        const query = `SELECT * FROM public.cart WHERE user_id = '${userId}'`;
+
+               const { rows } = await client.query(
+            `DELETE FROM public.cart WHERE user_id = ${userId};`
+            )
+                
+        const result = await client.query(query);
+        return await reply.code(201).send(result.rows);
+    })     
+  } 
+```
+<br>
+<br>
+
+# 회고
+
+우선, 팀 프로젝트를 진행하면서 느낀 점이 많다.  
+프로젝트 요구 사항이 너무 높다고 불평만 했었는데 시간을 갈아서(?) 만들다 보니 나오는 결과에 만족을 하는 내 자신을 발견했다. 내 만족 가운데 가장 높았던 것은 DB 테이블의 프론트 구현 부분이다. GET 요청으로 fastify로 DB에 접근할 때, json 형식으로 쭉 나열되어 있는 못생긴 모습이 보기 싫어서 표로 만들어냈다 !
 
 
-
-  
-
-
+몇 가지 내가 느낀 점에 대해 공유를 하겠다.
+- 레퍼런스를 많이 뒤져봐야겠다.
+- 인증 토큰을 받아서 접근할 수 있는 
