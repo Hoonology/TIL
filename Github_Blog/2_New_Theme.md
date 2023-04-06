@@ -36,3 +36,19 @@
 2. 게시물 수정
     ![input](./assets/Input.png)
     ![Output](./assets/Output.png)
+3. 자꾸만 ```https://hoonology.github.io/``` 페이지 들어가면 첫 화면에 
+```--- layout: home # Index page ---``` 가 떠서 화가 나지만, 문제를 해결해본다.  
+GPT에 따르면, ```index.html``` 을 추가해서 아래 코드를 입력하면 된다고 하는데, 이번엔 로컬에서 돌아가지 않는 문제가 발생하여 새로운 솔루션을 찾고자 한다.
+
+    ```yaml
+    ---
+    layout: home
+    ---
+
+    {% include index.md %}
+    ```
+    ### 해결
+    - 루트 디렉토리에 index.html을 생성한다.
+    - index.html에 위 코드를 입력한다.
+    - _includes 라는 폴더를 만든 뒤 index.md를 그 폴더에 옮긴다.
+
