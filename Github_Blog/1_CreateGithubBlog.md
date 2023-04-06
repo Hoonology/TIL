@@ -36,7 +36,7 @@ git commit -m "Initioal commit"
 git push -u origin main
 ```
 
-![push](./asset/2_Git/push.png)
+![push](./assets/push.png)
 
 ### 4. 확인   
 https://hoonology.github.io 에서 확인  
@@ -112,7 +112,7 @@ bundle exec jekyll serve
 http://127.0.0.1:4000 접속 후 정상적으로 나오면,   
 https://hoonology.github.io/에 접속해서 같은 창이 나오는지 확인
 
-![local](./asset/2_Git/local.png)
+![local](./assets/local.png)
 
 <br>
 <br>
@@ -146,7 +146,7 @@ echo .DS_Store>>.gitignore
 bundle exec jekyll serve
 ```
 
-![local2](./asset/2_Git/local2.png)
+![local2](./assets/local2.png)
 깔끔허이.. 잘 쓰겄소
 
 아니다. 난 처피 포기 못해  
@@ -197,7 +197,7 @@ Gemfile.lock
 
 # 문제 발생
 github에 report build 오류 발생,   
-![error](./asset/error.png)
+![error](./assets/error.png)
 github-pages can't satisfy your Gemfile's dependencies. 라고 떠서 Gemfile을 아래와 같이 수정했다.
 ```bash
 gem "jekyll-theme-chirpy", "~> 4.5"
@@ -216,14 +216,12 @@ gem "jekyll-theme-chirpy", "~> 4.5"
 
 --------
 
-망할 저 스킨 안쓸게요
-
-다른 스킨 이용합니다.
-
 
 https://codesyun.tistory.com/102#--%--%ED%--%-C%EB%A-%--%EB%B-%--%--%EC%--%B-%EB%B-%--%EC%--%AC%ED%--%AD%--%EB%B-%--%EA%B-%BD
 
-그냥 이 사람꺼 보고 다 읽으면 해결됩니다.
+
+
+---
 
 
 
