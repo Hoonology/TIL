@@ -77,7 +77,7 @@
 # HTTP
 ## HTTP 역사와 구분
 
-![HTTP](./assets/HTTP%20%EC%97%AD%EC%82%AC.png)
+![HTTP](./assets/http.png)
 
 - TCP 기반 : HTTP/1.1, HTTP/2
 - UDP 기반 : HTTP/3
@@ -163,7 +163,7 @@ IP 패킷의 위와 같은 한계점이 있기 때문에 네트워크 계층 구
 - 생성된 IP 패킷은 물리적 계층을 지나기 위해서 이더넷 프레임 워크에 포함되어 서버로 전송됩니다. 
 
 HTTP 메시지 생성 -> **Socket**(네트워크 환경에 연결할 수 있게 만들어진 연결부)을 통해 전달
-![pic](./assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-06%2014.48.40.png)
+![pic](./assets/socket.png  )
 
 
 ## TCP/IP 패킷 정보
@@ -173,10 +173,10 @@ HTTP 메시지 생성 -> **Socket**(네트워크 환경에 연결할 수 있게 
 
 ## TCP (전송 제어 프로토콜)
 - 연결 지향 (3 way handshake)
-    - ![syn](./assets/syn.png)
+    - ![syn](./assets/3way.png)
     - 클라이언트가 서버에 SYN 패킷 전송 -> 서버가 클라이언트에게 ACK(수락) + SYN 패킷 전송 -> 클라이언트가 서버에게 ACK 패킷 전송  -> 연결 성립
 - 데이터 전달 보증
-    - ![데이터전송과응답](./assets/%08%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%EC%86%A1%EA%B3%BC%EC%9D%91%EB%8B%B5.png)
+    - ![데이터전송과응답](./assets/%EC%A0%84%EC%86%A1%EC%9D%91%EB%8B%B5.png)
     - 데이터 전송과 응답이 성공적으로 이루어짐으로써 IP 패킷의 한계인 비연결성 보완 
 
 
