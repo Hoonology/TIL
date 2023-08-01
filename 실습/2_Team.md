@@ -20,6 +20,12 @@
 - [✔] [사용자는 상품을 자신의 장바구니에서 제외할 수 있다]
 ---
 ## Fastify를 이용해 DB와 통신하는 서버 만들기
+
+## ERD
+<img width="800" alt="스크린샷 2023-08-02 01 02 55" src="https://github.com/Hoonology/TIL/assets/105037141/c903e78b-76c3-4473-b1c5-d18954b23e67">
+
+
+
 ### 1. 우선 ElephantSQL의 연결 정보를 ```.env``` 파일에 작성한다.
   ```bash
   HOSTNAME=satao.db.elephantsql.com
